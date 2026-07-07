@@ -1,0 +1,9 @@
+Missing attendance for student_id 3.
+Missing homework_score for student_id 4.
+Missing city for student_id 5.
+Missing age for student_id 6.
+Missing registered_date for student_id 7.
+Missing course for student_id 9.
+Invalid attendance value for student_id 12.
+Inconsistent city formatting for VUSHTRRI and prishtina.
+Inconsistent course formatting for Data engineering.

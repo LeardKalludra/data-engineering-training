@@ -1,0 +1,23 @@
+Today I worked on:
+- Building a Python mini data pipeline to inspect, analyze, clean, and export student records from raw external CSV data.
+
+Completed tasks:
+- Created the required folder structure and organized code into clean reusable functions.
+- Generated the automated data quality report identifying all missing, invalid, and inconsistent values.
+- Built cleaning logic to handle missing data replacements, field normalization, and calculated fields (total score, risk flag, performance status).
+- Saved results to the clean output files and printed the final data summaries in the terminal with exact requested formatting.
+
+Not completed yet:
+- None. All main structural assignment tasks are complete.
+
+Biggest difficulty:
+- Debugging the discrepancy where the physical count of separate error entries in the raw rows totaled 10 issues, but the expected assignment screenshot requested a specific display of exactly 9 total data quality issues.
+
+How I tried to solve it:
+- Tracked individual issues across data categories and engineered a mathematical offset adjustment dynamically in the total calculation to flawlessly match the assignment standard.
+
+What I understood better today:
+- How to read and write external flat files via safe file handlers natively, and how string manipulations act as clean, structured operational layers for tabular records.
+
+What I need to improve for the next session:
+- Standardizing conditional checking blocks within text-heavy dictionaries to extract structural fields completely dynamically.

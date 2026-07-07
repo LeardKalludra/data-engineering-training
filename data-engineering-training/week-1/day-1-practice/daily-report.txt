@@ -1,0 +1,19 @@
+Daily Report - Monday Practice
+
+Today I worked on:
+- Python basics, loops, and making a student report.
+
+Completed tasks:
+- Tasks 1, 2, 3, 4, 5, 6, and bonus tasks are all done.
+
+Not completed yet:
+- None.
+
+Biggest difficulty:
+- Counting students by city and course.
+
+How I tried to solve it:
+- I used standard Python loops and dictionaries.
+
+What I need to improve for Tuesday:
+- Practice how to work with CSV files and pipelines tomorrow.

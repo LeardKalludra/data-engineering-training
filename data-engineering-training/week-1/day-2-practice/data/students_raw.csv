@@ -1,0 +1,13 @@
+ID,Name,City,Course,Age,Attendance,Homework,Registered Date
+1,Arta,Vushtrri,Python,17,90,85,2026-07-01
+2,Blend,Prishtina,React,18,60,70,2026-07-02
+3,Dion,Vushtrri,Python,16,,95,2026-07-02
+4,Elira,Mitrovica,React,17,80,,2026-07-03
+5,Faton,,Data Engineering,19,100,90,2026-07-03
+6,Gresa,VUSHTRRI,Python,,55,88,2026-07-04
+7,Leart,Prishtina,Data engineering,18,55,60,
+8,Nora,Mitrovica,React,17,95,92,2026-07-05
+9,Arben,Vushtrri,,18,70,75,2026-07-05
+10,Lisa,prishtina,Python,16,85,80,2026-07-06
+11,Erion,Skenderaj,Data Engineering,20,40,50,2026-07-06
+12,Alma,Vushtrri,Python,17,abc,90,2026-07-07
