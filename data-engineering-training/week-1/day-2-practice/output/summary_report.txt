@@ -3,7 +3,7 @@ Final Student Data Report
 
 Total raw records: 12
 Total cleaned records: 12
-Total data quality issues found: 9
+Total data quality issues found: 10
 
 Average attendance: 60.83
 Average homework score: 72.92
@@ -20,6 +20,19 @@ Python: 5
 React: 3
 Data Engineering: 3
 Not Assigned: 1
+
+Average attendance by course:
+Python: 46.0
+React: 78.33
+Data Engineering: 65.0
+Not Assigned: 70.0
+
+Average homework score by city:
+Vushtrri: 86.6
+Prishtina: 70.0
+Mitrovica: 46.0
+Unknown: 90.0
+Skenderaj: 50.0
 
 Strong students:
 Arta

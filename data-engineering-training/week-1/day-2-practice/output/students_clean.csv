@@ -1,13 +1,13 @@
-student_id,name,city,course,age,attendance,homework_score,registered_date,total_score,performance_status,risk_flag
-1,Arta,Vushtrri,Python,17,90,85,2026-07-01,175,Strong,OK
-2,Blend,Prishtina,React,18,60,70,2026-07-02,130,Average,OK
-3,Dion,Vushtrri,Python,16,0,95,2026-07-02,95,Needs Support,At Risk
-4,Elira,Mitrovica,React,17,80,0,2026-07-03,80,Needs Support,At Risk
-5,Faton,Unknown,Data Engineering,19,100,90,2026-07-03,190,Strong,OK
-6,Gresa,Vushtrri,Python,0,55,88,2026-07-04,143,Needs Support,At Risk
-7,Leart,Prishtina,Data Engineering,18,55,60,Unknown Date,115,Needs Support,At Risk
-8,Nora,Mitrovica,React,17,95,92,2026-07-05,187,Strong,OK
-9,Arben,Vushtrri,Not Assigned,18,70,75,2026-07-05,145,Average,OK
-10,Lisa,Prishtina,Python,16,85,80,2026-07-06,165,Strong,OK
-11,Erion,Skenderaj,Data Engineering,20,40,50,2026-07-06,90,Needs Support,At Risk
-12,Alma,Vushtrri,Python,17,0,90,2026-07-07,90,Needs Support,At Risk
+student_id,name,city,course,age,attendance,homework_score,registered_date,total_score,performance_status,risk_flag,attendance_level
+1,Arta,Vushtrri,Python,17,90,85,2026-07-01,175,Strong,OK,High
+2,Blend,Prishtina,React,18,60,70,2026-07-02,130,Average,OK,Medium
+3,Dion,Vushtrri,Python,16,0,95,2026-07-02,95,Needs Support,At Risk,Low
+4,Elira,Mitrovica,React,17,80,0,2026-07-03,80,Needs Support,At Risk,High
+5,Faton,Unknown,Data Engineering,19,100,90,2026-07-03,190,Strong,OK,High
+6,Gresa,Vushtrri,Python,0,55,88,2026-07-04,143,Needs Support,At Risk,Low
+7,Leart,Prishtina,Data Engineering,18,55,60,Unknown Date,115,Needs Support,At Risk,Low
+8,Nora,Mitrovica,React,17,95,92,2026-07-05,187,Strong,OK,High
+9,Arben,Vushtrri,Not Assigned,18,70,75,2026-07-05,145,Average,OK,Medium
+10,Lisa,Prishtina,Python,16,85,80,2026-07-06,165,Strong,OK,High
+11,Erion,Skenderaj,Data Engineering,20,40,50,2026-07-06,90,Needs Support,At Risk,Low
+12,Alma,Vushtrri,Python,17,0,90,2026-07-07,90,Needs Support,At Risk,Low

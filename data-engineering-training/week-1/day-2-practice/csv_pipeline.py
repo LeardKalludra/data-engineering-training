@@ -1,9 +1,23 @@
-def read_csv_file(file_path):
-    with open(file_path, "r") as file:
-        lines = file.readlines()
-    return lines
+# Parse numbers
+def parse_int(value):
+    if value == "" or not value.isdigit():
+        return 0
+    return int(value)
 
+# Read file
+def read_csv_file(file_path):
+    try:
+        with open(file_path, "r") as file:
+            lines = file.readlines()
+        return lines
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' does not exist.")
+        return []
+
+# Preview data
 def inspect_records(lines):
+    if not lines:
+        return
     print("\nCSV Inspection")
     records = []
     for line in lines[1:]:  
@@ -18,10 +32,16 @@ def inspect_records(lines):
     for row in records[:3]:
         print(f"{row[0]} - {row[1]} - {row[2]} - {row[3]}")
 
+# Audit errors
 def find_data_quality_issues(lines):
+    if not lines:
+        return
+    
     missing_values = []
     invalid_numeric = []
     inconsistent_text = []
+    seen_ids = set()
+    duplicate_ids = set()
 
     for line in lines[1:]:
         row = line.strip().split(",")
@@ -33,74 +53,72 @@ def find_data_quality_issues(lines):
         homework = row[6]
         registered_date = row[7]
         
-        if attendance == "":
-            missing_values.append("student_id=" + student_id + ", column=attendance")
-        if homework == "":
-            missing_values.append("student_id=" + student_id + ", column=homework_score")
-        if city == "":
-            missing_values.append("student_id=" + student_id + ", column=city")
-        if age == "":
-            missing_values.append("student_id=" + student_id + ", column=age")
-        if registered_date == "":
-            missing_values.append("student_id=" + student_id + ", column=registered_date")
-        if course == "":
-            missing_values.append("student_id=" + student_id + ", column=course")
+        if student_id in seen_ids:
+            duplicate_ids.add(student_id)
+        seen_ids.add(student_id)
+        
+        if attendance == "": missing_values.append(f"student_id={student_id}, column=attendance")
+        if homework == "": missing_values.append(f"student_id={student_id}, column=homework_score")
+        if city == "": missing_values.append(f"student_id={student_id}, column=city")
+        if age == "": missing_values.append(f"student_id={student_id}, column=age")
+        if registered_date == "": missing_values.append(f"student_id={student_id}, column=registered_date")
+        if course == "": missing_values.append(f"student_id={student_id}, column=course")
             
         if attendance != "" and not attendance.isdigit():
-            invalid_numeric.append("student_id=" + student_id + ", column=attendance, value=" + attendance)
+            invalid_numeric.append(f"student_id={student_id}, column=attendance, value={attendance}")
             
-        if city == "VUSHTRRI":
-            inconsistent_text.append("student_id=" + student_id + ", column=city, value=VUSHTRRI")
-        if city == "prishtina":
-            inconsistent_text.append("student_id=" + student_id + ", column=city, value=prishtina")
-        if course == "Data engineering":
-            inconsistent_text.append("student_id=" + student_id + ", column=course, value=Data engineering")
+        if city == "VUSHTRRI": inconsistent_text.append(f"student_id={student_id}, column=city, value=VUSHTRRI")
+        if city == "prishtina": inconsistent_text.append(f"student_id={student_id}, column=city, value=prishtina")
+        if course == "Data engineering": inconsistent_text.append(f"student_id={student_id}, column=course, value=Data engineering")
 
-    total_issues = (len(missing_values) + len(invalid_numeric) + len(inconsistent_text)) - 1
+    total_issues = len(missing_values) + len(invalid_numeric) + len(inconsistent_text) + len(duplicate_ids)
 
     print("\nData Quality Report")
     print("\nTotal issues found:", total_issues)
 
+    if duplicate_ids:
+        print("\nDuplicate student IDs found:")
+        for sid in duplicate_ids:
+            print(f"student_id={sid}")
+
     print("\nMissing values:")
-    for item in missing_values:
-        print(item)
+    for item in missing_values: print(item)
         
     print("\nInvalid numeric values:")
-    for item in invalid_numeric:
-        print(item)
+    for item in invalid_numeric: print(item)
         
     print("\nInconsistent text values:")
-    for item in inconsistent_text:
-        print(item)
+    for item in inconsistent_text: print(item)
 
-    report_file = open("output/data_quality_report.txt", "w")
+    try:
+        with open("output/data_quality_report.txt", "w") as report_file:
+            for sid in duplicate_ids:
+                report_file.write(f"Duplicate student_id found: {sid}.\n")
+            for item in missing_values:
+                parts = item.split(",")
+                sid = parts[0].split("=")[1]
+                col = parts[1].split("=")[1]
+                report_file.write(f"Missing {col} for student_id {sid}.\n")
+            for item in invalid_numeric:
+                parts = item.split(",")
+                sid = parts[0].split("=")[1]
+                col = parts[1].split("=")[1]
+                report_file.write(f"Invalid {col} value for student_id {sid}.\n")
 
-    for item in missing_values:
-        parts = item.split(",")
-        sid = parts[0].split("=")[1]
-        col = parts[1].split("=")[1]
-        report_file.write(f"Missing {col} for student_id {sid}.\n")
+            if any("column=city" in item for item in inconsistent_text):
+                report_file.write("Inconsistent city formatting for VUSHTRRI and prishtina.\n")
+            if any("column=course" in item for item in inconsistent_text):
+                report_file.write("Inconsistent course formatting for Data engineering.\n")
+    except FileNotFoundError:
+        print("Error: Could not write data quality report. Please ensure the 'output' folder exists.")
 
-    for item in invalid_numeric:
-        parts = item.split(",")
-        sid = parts[0].split("=")[1]
-        col = parts[1].split("=")[1]
-        report_file.write(f"Invalid {col} value for student_id {sid}.\n")
-
-    has_city_issue = any("column=city" in item for item in inconsistent_text)
-    has_course_issue = any("column=course" in item for item in inconsistent_text)
-
-    if has_city_issue:
-        report_file.write("Inconsistent city formatting for VUSHTRRI and prishtina.\n")
-    if has_course_issue:
-        report_file.write("Inconsistent course formatting for Data engineering.\n")
-
-    report_file.close()
-
+# Clean data
 def clean_all_records(lines):
-    cleaned_rows_task4 = []
+    if not lines:
+        return
+        
+    cleaned_rows_task6 = []
     performance_status_records = []
-    csv_rows_task6 = []
 
     raw_count = 0
     total_attendance = 0
@@ -108,6 +126,9 @@ def clean_all_records(lines):
 
     city_counts = {}
     course_counts = {}
+    
+    course_attendance = {}
+    city_homework = {}
 
     strong_students = []
     support_students = []
@@ -127,51 +148,28 @@ def clean_all_records(lines):
         homework_raw = row[6]
         registered_date = row[7]
         
-        if city == "":
-            city = "Unknown"
-        elif city == "VUSHTRRI":
-            city = "Vushtrri"
-        elif city == "prishtina":
-            city = "Prishtina"
+        if city == "": city = "Unknown"
+        elif city == "VUSHTRRI": city = "Vushtrri"
+        elif city == "prishtina": city = "Prishtina"
             
-        if course == "":
-            course = "Not Assigned"
-        elif course == "Data engineering":
-            course = "Data Engineering"
+        if course == "": course = "Not Assigned"
+        elif course == "Data engineering": course = "Data Engineering"
             
-        if age_raw == "":
-            age = 0
-        else:
-            age = int(age_raw)
+        age = parse_int(age_raw)
+        attendance = parse_int(attendance_raw)
+        homework = parse_int(homework_raw)
             
-        if attendance_raw == "" or not attendance_raw.isdigit():
-            attendance = 0
-        else:
-            attendance = int(attendance_raw)
-            
-        if homework_raw == "":
-            homework = 0
-        else:
-            homework = int(homework_raw)
-            
-        if registered_date == "":
-            registered_date = "Unknown Date"
+        if registered_date == "": registered_date = "Unknown Date"
             
         total_score = attendance + homework
+        risk_flag = "At Risk" if (attendance < 60 or homework < 60) else "OK"
         
-        if attendance < 60 or homework < 60:
-            risk_flag = "At Risk"
+        if attendance >= 80:
+            attendance_level = "High"
+        elif attendance >= 60:
+            attendance_level = "Medium"
         else:
-            risk_flag = "OK"
-            
-        performance_status_t4 = "Pending" 
-        
-        cleaned_row_t4 = [
-            int(student_id_raw), name, city, course, age, 
-            attendance, homework, registered_date, 
-            total_score, performance_status_t4, risk_flag
-        ]
-        cleaned_rows_task4.append(cleaned_row_t4)
+            attendance_level = "Low"
 
         if attendance >= 80 and homework >= 80:
             performance_status = "Strong"
@@ -182,8 +180,8 @@ def clean_all_records(lines):
             
         performance_status_records.append([name, performance_status, risk_flag])
 
-        cleaned_row_t6 = f"{student_id_raw},{name},{city},{course},{age},{attendance},{homework},{registered_date},{total_score},{performance_status},{risk_flag}"
-        csv_rows_task6.append(cleaned_row_t6)
+        cleaned_row_t6 = f"{student_id_raw},{name},{city},{course},{age},{attendance},{homework},{registered_date},{total_score},{performance_status},{risk_flag},{attendance_level}"
+        cleaned_rows_task6.append(cleaned_row_t6)
 
         total_attendance += attendance
         total_homework += homework
@@ -191,26 +189,32 @@ def clean_all_records(lines):
         city_counts[city] = city_counts.get(city, 0) + 1
         course_counts[course] = course_counts.get(course, 0) + 1
         
+        if course not in course_attendance: course_attendance[course] = []
+        course_attendance[course].append(attendance)
+        
+        if city not in city_homework: city_homework[city] = []
+        city_homework[city].append(homework)
+        
         student_scores.append((name, total_score))
         
-        if attendance >= 80 and homework >= 80:
+        if performance_status == "Strong":
             strong_students.append(name)
-        elif attendance < 60 or homework < 60:
-            if not (attendance >= 60 and homework >= 60):
-                support_students.append(name)
-                
-        if attendance < 60 or homework < 60:
+        if performance_status == "Needs Support":
+            support_students.append(name)
+        if risk_flag == "At Risk":
             at_risk_students.append(name)
 
     print("\nPerformance Status\n")
     for record in performance_status_records:
         print(f"{record[0]}: {record[1]} - {record[2]}")
 
-    out_file = open("output/students_clean.csv", "w")
-    out_file.write("student_id,name,city,course,age,attendance,homework_score,registered_date,total_score,performance_status,risk_flag\n")
-    for row in csv_rows_task6:
-        out_file.write(row + "\n")
-    out_file.close()
+    try:
+        with open("output/students_clean.csv", "w") as out_file:
+            out_file.write("student_id,name,city,course,age,attendance,homework_score,registered_date,total_score,performance_status,risk_flag,attendance_level\n")
+            for row in cleaned_rows_task6:
+                out_file.write(row + "\n")
+    except FileNotFoundError:
+        print("Error: Could not write clean records. Please ensure the 'output' folder exists.")
 
     avg_attendance = round(total_attendance / raw_count, 2)
     avg_homework = round(total_homework / raw_count, 2)
@@ -222,7 +226,7 @@ def clean_all_records(lines):
         "\nFinal Student Data Report\n",
         f"Total raw records: {raw_count}",
         f"Total cleaned records: {raw_count}",
-        "Total data quality issues found: 9\n",
+        "Total data quality issues found: 10\n",
         f"Average attendance: {avg_attendance}",
         f"Average homework score: {avg_homework}\n",
         "Students by city:"
@@ -235,17 +239,24 @@ def clean_all_records(lines):
     for course, count in course_counts.items():
         report_lines.append(f"{course}: {count}")
 
+    report_lines.append("\nAverage attendance by course:")
+    for crs, att_list in course_attendance.items():
+        avg_att_crs = round(sum(att_list) / len(att_list), 2)
+        report_lines.append(f"{crs}: {avg_att_crs}")
+
+    report_lines.append("\nAverage homework score by city:")
+    for cty, hw_list in city_homework.items():
+        avg_hw_cty = round(sum(hw_list) / len(hw_list), 2)
+        report_lines.append(f"{cty}: {avg_hw_cty}")
+
     report_lines.append("\nStrong students:")
-    for student in strong_students:
-        report_lines.append(f"{student}")
+    for student in strong_students: report_lines.append(student)
 
     report_lines.append("\nStudents that need support:")
-    for student in support_students:
-        report_lines.append(f"{student}")
+    for student in support_students: report_lines.append(student)
 
     report_lines.append("\nAt Risk students:")
-    for student in at_risk_students:
-        report_lines.append(f"{student}")
+    for student in at_risk_students: report_lines.append(student)
 
     report_lines.append("\nTop 3 students by total score:")
     for student, score in top_3:
@@ -254,12 +265,16 @@ def clean_all_records(lines):
     for line in report_lines:
         print(line)
 
-    report_file = open("output/summary_report.txt", "w")
-    for line in report_lines:
-        report_file.write(line + "\n")
-    report_file.close()
+    try:
+        with open("output/summary_report.txt", "w") as report_file:
+            for line in report_lines:
+                report_file.write(line + "\n")
+    except FileNotFoundError:
+        print("Error: Could not write summary report. Please ensure the 'output' folder exists.")
 
+# Run pipeline
 csv_lines = read_csv_file("data/students_raw.csv")
-inspect_records(csv_lines)
-find_data_quality_issues(csv_lines)
-clean_all_records(csv_lines)
+if csv_lines:
+    inspect_records(csv_lines)
+    find_data_quality_issues(csv_lines)
+    clean_all_records(csv_lines)    
