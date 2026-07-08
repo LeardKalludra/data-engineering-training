@@ -1,0 +1,23 @@
+Daily Report - Day 3 SQL Foundations
+
+Today I worked on:
+- Creating a custom restaurant database table and running filter queries.
+
+Completed tasks:
+- Wrote SQL scripts for the food_orders table and completed 10 required queries.
+- Created the pipeline thinking document and the README file.
+
+Not completed yet:
+- None, everything for Day 3 is complete.
+
+The hardest part was:
+- Combining multiple text and numeric filters properly using AND/OR logic.
+
+How I tried to solve it:
+- Practiced running smaller queries first before combining them together.
+
+What I understood better today:
+- How to create calculated columns and filter data based on specific business conditions.
+
+What I need to improve for the next session:
+- Writing more complex multi-step queries and practicing group filters.
