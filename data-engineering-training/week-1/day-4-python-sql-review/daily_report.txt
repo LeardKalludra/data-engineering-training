@@ -1,0 +1,38 @@
+Daily Report - Day 4 Practice
+Today I worked on:
+- Writing functions in Python to filter and sort operational data without relying on lambda expressions.
+- Building a mock dataset in SQLiteOnline using explicit data types.
+- Evaluating matching analytical statements using Python logic structures and SQL expressions.
+
+Python tasks completed:
+- Task P1: Basic dataset reporting loops.
+- Task P2: Filter routines checking record conditions.
+- Task P3: Row-by-row manual value updates.
+- Task P4: Memory array sort loops.
+- Task P5: Unaggregated record summaries.
+- Bonus: Dictionary counters processing attributes across cities and categories.
+
+SQL tasks completed:
+- Task S1: Database column extractions with descriptive comments.
+- Task S2: Basic WHERE clause lookups.
+- Task S3: Mixed conditional expressions.
+- Task S4: Sorting configurations using directional rules.
+- Task S5: Dynamic expression names built on the fly.
+- Bonus: Collective group metrics using engine aggregate structures.
+
+Comparison tasks completed:
+- Task 1 through 5 in comparison.md mapping logic strategies directly.
+
+What I understood better today:
+- Understood how structural string properties clash when embedding unquoted identifiers inside double-quoted string literals.
+- Realized how relational query engines replace manual conditional iteration passes entirely through underlying optimization rules.
+- Learned how to replace lambda expressions with clear helper functions for sorting operations.
+
+What was difficult:
+- Keeping track of nested dictionary keys while tracking loop iteration elements in clean print statements.
+
+What I need to practice more:
+- Designing database groupings using aggregation rules without mixing up column filters.
+
+Did I use AI? If yes, how did I use it?
+- Yes, used to clean up text alignments and structural formatting rules across the documentation.
