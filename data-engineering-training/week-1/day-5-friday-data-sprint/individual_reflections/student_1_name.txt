@@ -1,0 +1,22 @@
+# Individual Reflection - Leard Kalludra
+
+My role in the group:
+Python analysis.
+
+What I worked on:
+Python functions to read the CSV file, calculate totals, and separate completed orders from pending/cancelled ones.
+
+What I understood better today:
+How to split raw text lines by commas and turn them into a list of dictionaries.
+
+What was difficult for me:
+Removing extra whitespaces from strings using `.strip()` without breaking the data.
+
+What I can explain live:
+How the loop runs through the file lines and converts raw data into numbers.
+
+What I still need to practice:
+Writing cleaner code with fewer nested loops.
+
+Did I use AI? If yes, how did I use it?
+Yes, I used AI to help structure the functions, clean up old `try/except` errors, and format the markdown files.
