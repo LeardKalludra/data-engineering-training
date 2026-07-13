@@ -1,0 +1,12 @@
+Daily Report - Day 6 Practice
+Today I worked on:
+- SQL setup completed: Yes, verified executable from top to bottom.
+- Aggregation tasks completed: Yes, built metrics for total counts, price spectrums, and revenues.
+- GROUP BY tasks completed: Yes, mapped distribution patterns and isolated heavy customer targets with HAVING.
+- JOIN tasks completed: Yes, successfully unified operational datasets into descriptive, clean reports.
+- Business report completed: Yes, generated markdown outlines breaking down financial recommendations.
+- What I understood better today: How relational JOIN operations form the absolute backbone of engineering clear dashboards for corporate operations.
+- What was difficult: Isolating valid data metrics accurately using conditional HAVING filters after heavy groupings.
+- What I need to practice more: Formatting complex analytical schemas across nested sub-joins.
+- Did I use AI? If yes, how did I use it?: Yes, used for structuring target scripts and debugging missing syntax checks quickly.
+- What can I explain live without help: The operational flow difference between WHERE row filtering and HAVING group structural filtering.
