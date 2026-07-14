@@ -1,0 +1,10 @@
+Daily Report Day 7 Practice
+Today I worked on: Cleaning up data relationships and fixing broken diagnostic queries.
+Broken queries I fixed: Q1 through Q10.
+Validation queries I completed: V1 through V15.
+Business numbers I verified: Total sales volume, completed revenue baseline metrics, and top items.
+What SQL mistake I understand better now: Execution order filters (WHERE vs HAVING) and column table boundaries.
+What was difficult: Correctly verifying math logic boundaries on complex multi-join layouts.
+What I need to practice more: Writing join structures fluidly without error prompts.
+Did I use AI? No, completed natively during runtime checks.
+Can I explain my fixed queries live? Yes.
