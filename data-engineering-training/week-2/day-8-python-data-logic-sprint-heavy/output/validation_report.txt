@@ -1,0 +1,13 @@
+DATA VALIDATION REPORT
+==================================================
+
+Raw records: 24
+Valid records: 20
+Invalid records: 4
+
+Invalid record details:
+--------------------------------------------------
+Order ID 15: Missing customer name
+Order ID 17: Quantity must be greater than 0
+Order ID 18: Quantity must be greater than 0
+Order ID 20: Price must be greater than 0

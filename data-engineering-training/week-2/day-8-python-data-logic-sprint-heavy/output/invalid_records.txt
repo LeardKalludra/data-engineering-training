@@ -1,0 +1,23 @@
+INVALID RECORDS REPORT
+==================================================
+
+Order ID: 15
+Customer: 
+Reasons:
+- Missing customer name
+
+Order ID: 17
+Customer: Medina
+Reasons:
+- Quantity must be greater than 0
+
+Order ID: 18
+Customer: Ilir
+Reasons:
+- Quantity must be greater than 0
+
+Order ID: 20
+Customer: Arta
+Reasons:
+- Price must be greater than 0
+

@@ -1,0 +1,47 @@
+Daily Report - Day 8 Practice
+=============================
+
+Today I worked on:
+- Setting up the project repository structure and importing the raw data.
+- Writing validation rules to detect empty customer names, zero, or negative quantities/prices.
+- Normalizing inconsistent string values (statuses, cities, channels, categories) using standard string manipulation instead of sets or external packages.
+- Generating automated text reports (validation report, invalid records report, and business performance report).
+- Aggregating business performance indicators and calculating metric rankings dynamically.
+
+Python tasks completed:
+- Created and imported the `orders` dataset dynamically.
+- Coded pure-Python looping logic using list/dictionary comprehensions.
+- Replaced all mathematical sets (`set()`) with conditional list checks (`if item not in list`).
+- Implemented lambda-based custom sorting algorithms to rank metrics dynamically.
+- Programmed Python file-writing (`open(..., 'w')`) to write three unique text reports directly to an 'output/' folder.
+
+Validation logic completed:
+- Wrote validation logic to separate orders with empty string names, quantity <= 0, and price <= 0.
+- Logged exact reasons for failure on each record, supporting multiple errors on a single order.
+
+Cleaning/normalization completed:
+- Normalized status strings ("complete", "Completed") into "completed".
+- Standardized city values (mapping "Prishtine" to "Prishtina") and converted all other cities to Title Case.
+- Cleaned channel and category names to standard casing ("online" and "Accessories").
+- Appended a calculated 'total_amount' field to each cleaned record.
+
+Reports generated:
+- output/validation_report.txt (Validation statistics and summary)
+- output/invalid_records.txt (Detailed reasons for every failed record)
+- output/business_report.txt (Executive KPI figures, dimensions, and strategic recommendations)
+
+What was difficult:
+- Implementing dynamic dictionaries to group counts and sum totals without using pandas.
+- Making sure that we did not use standard mathematical sets (`set()`) while still guaranteeing unique elements when verifying raw and cleaned data.
+- Formatting the report files cleanly using manual line-breaks and column spacers.
+
+What I understood better today:
+- The importance of "data cleaning pipelines" where data must be strictly validated and normalized before any business metrics are calculated to prevent skewed financials.
+- How to write pure Python helper functions and run them systematically inside a clean `main()` function sequence.
+
+What I need to practice more:
+- Custom lambda sorting keys inside complex lists of dictionaries.
+- Designing modular architectures that scale gracefully when new input fields are added.
+
+Did I use AI? If yes, how did I use it?
+- Yes, I used AI to help add comments and format the code.
