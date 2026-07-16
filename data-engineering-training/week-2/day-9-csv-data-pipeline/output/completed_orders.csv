@@ -1,0 +1,9 @@
+order_id,customer_id,customer_name,city,product_id,product_name,category,quantity,price,total_amount,status,channel,order_date
+1,1,Arta,Vushtrri,101,Laptop,Electronics,1,700,700.00,completed,online,2026-07-01
+2,2,Blend,Prishtina,102,Mouse,Accessories,2,15,30.00,completed,store,2026-07-01
+4,3,Dren,Mitrovica,104,Monitor,Electronics,1,180,180.00,completed,store,2026-07-02
+7,5,Nora,Vushtrri,105,Headphones,Accessories,1,50,50.00,completed,online,2026-07-04
+8,6,Leart,Peja,104,Monitor,Electronics,2,180,360.00,completed,store,2026-07-04
+9,7,Faton,Prizren,106,Desk Chair,Office,1,120,120.00,completed,online,07-05-2026
+13,10,Gresa,Prishtina,102,Mouse,Accessories,4,15,60.00,completed,online,2026-07-07
+14,4,Elira,Prishtina,105,Headphones,Accessories,2,50,100.00,completed,store,2026-07-07

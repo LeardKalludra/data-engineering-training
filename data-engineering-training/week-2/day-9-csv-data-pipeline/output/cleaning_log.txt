@@ -1,0 +1,6 @@
+Cleaning Rules Applied:
+1. whitespace_trimming: Every column header and text cell value is stripped of surrounding spaces during loading.
+2. customer_city_normalization: All cities are lowercased, stripped, and capitalized (e.g. 'new york' -> 'New york'). Empty values default to 'Unknown'.
+3. order_status_standardization: Maps status strings to 'completed' (from 'completed', 'complete', 'done'), 'cancelled' (from 'cancelled', 'canceled'), 'pending', or fallback 'unknown'.
+4. sales_channel_standardization: Converts channel values to lowercase, matching variations like 'web' or 'online' to 'online', 'store' to 'store', and others to 'unknown'.
+5. duplicates_removal: Identified order_id collisions are flagged as 'duplicate_order_id' and quarantined to invalid_orders.csv.

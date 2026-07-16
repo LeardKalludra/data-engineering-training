@@ -1,0 +1,11 @@
+Data Quality Report - Day 9
+Total raw orders: 20
+Valid orders: 12
+Invalid orders: 8
+Invalid records by reason: missing_quantity: 1, missing_channel: 1, invalid_customer_id: 1, invalid_product_id: 1, missing_order_date: 1, negative_quantity: 1, missing_status: 1, invalid_quantity: 1
+Status values after cleaning: completed: 8, cancelled: 2, pending: 2
+Channel values after cleaning: online: 7, store: 5
+City values after cleaning: Vushtrri: 4, Prishtina: 3, Mitrovica: 2, Peja: 1, Prizren: 1, Ferizaj: 1
+Bronze input files checked: orders_raw.csv, customers_raw.csv, products_raw.csv
+Silver output files created: orders_clean.csv, invalid_orders.csv
+Main data quality problems found: High occurrence of missing_quantity (1 cases); High occurrence of missing_channel (1 cases)

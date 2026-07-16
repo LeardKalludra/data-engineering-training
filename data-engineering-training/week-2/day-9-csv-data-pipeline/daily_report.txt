@@ -1,0 +1,30 @@
+### 2. `daily_report.txt`
+
+```text
+Daily Report - Day 9 Practice
+Today I worked on:
+- Building a pure Python data pipeline to clean and validate CSV files.
+- Separating duplicate order IDs, standardizing inconsistent statuses, and resolving referential mismatches.
+- Writing clean output summaries and ranking metrics.
+
+Pipeline parts completed:
+- CSV ingestion and whitespace stripping.
+- Custom normalization rules for statuses, channels, and cities.
+- In-memory duplicate checks and relational integrity verification.
+- Silver layer file writing and Gold layer report aggregation.
+- Bonus challenges including sorted text file rankings and log outputs.
+
+Most difficult part:
+- Managing in-memory state lookup tables and duplicate tracking without library dataframes.
+
+One bug/error I fixed:
+- Handled empty rows and malformed inputs when parsing columns from raw inputs.
+
+What I understood better about Bronze/Silver/Gold:
+- Bronze keeps raw data safe, Silver ensures clean schemas and referential integrity, and Gold produces highly readable reports for business users.
+
+What I need to practice more:
+- Designing test assertions and keeping functional code highly modular.
+
+Did I use AI? If yes, how did I use it to structure:
+- Yes. I used AI to help structure the code cleanly, quickly format the markdown templates, and verify the logical layout of the bonus outputs.

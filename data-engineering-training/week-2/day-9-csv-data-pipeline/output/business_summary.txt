@@ -1,0 +1,12 @@
+Business Summary - Day 9
+Completed revenue: $1600.00
+Orders by status: completed: 8, cancelled: 2, pending: 2
+Orders by city: Vushtrri: 4, Prishtina: 3, Mitrovica: 2, Peja: 1, Prizren: 1, Ferizaj: 1
+Revenue by category: Electronics: $1240.00, Accessories: $240.00, Office: $120.00
+Revenue by channel: online: $930.00, store: $670.00
+Top 3 customers by completed revenue: Arta: $700.00, Leart: $360.00, Dren: $180.00
+Top 3 products by completed revenue: Laptop: $700.00, Monitor: $540.00, Headphones: $150.00
+Most valuable completed order: Order 1 by Arta ($700.00)
+Orders that should not count as revenue: 4
+Business recommendation: Double down on high-performing segments: Focus sales efforts on your leading category 'Electronics', and maximize marketing budgets for the 'online' channel.
+Why this Gold output can be trusted: This report is dynamically compiled from clean and verified relationships mapped directly against customers and products master files. All non-completed statuses (pending/cancelled) have been isolated from direct revenue calculations.
