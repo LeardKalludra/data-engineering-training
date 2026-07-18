@@ -1,0 +1,23 @@
+order_id,customer_id,customer_name,city,product_id,product_name,category,quantity,price,total_amount,status,channel,order_date
+1,1,Arta,Vushtrri,101,Laptop,Electronics,1,700,700.00,completed,online,2026-07-01
+2,2,Blend,Prishtina,102,Mouse,Accessories,2,15,30.00,completed,store,2026-07-01
+3,1,Arta,Vushtrri,103,Keyboard,Accessories,1,40,40.00,cancelled,online,2026/07/02
+4,3,Dren,Mitrovica,104,Monitor,Electronics,1,180,180.00,completed,store,2026-07-02
+6,3,Dren,Mitrovica,101,Laptop,Electronics,1,700,700.00,pending,online,2026-07-03
+7,5,Nora,Vushtrri,105,Headphones,Accessories,1,50,50.00,completed,online,2026-07-04
+8,6,Leart,Peja,104,Monitor,Electronics,2,180,360.00,completed,store,2026-07-04
+9,7,Faton,Prizren,106,Desk Chair,Office,1,120,120.00,completed,online,07-05-2026
+10,2,Blend,Prishtina,107,USB Cable,Accessories,3,8,24.00,completed,unknown,2026-07-05
+11,8,Rina,Vushtrri,101,Laptop,Electronics,1,700,700.00,cancelled,online,2026-07-06
+12,9,Arben,Ferizaj,108,Desk,Office,1,220,220.00,pending,store,2026-07-06
+13,10,Gresa,Prishtina,102,Mouse,Accessories,4,15,60.00,completed,online,2026-07-07
+14,4,Elira,Prishtina,105,Headphones,Accessories,2,50,100.00,completed,store,2026-07-07
+19,8,Rina,Vushtrri,101,Laptop,Electronics,1,700,700.00,unknown,online,2026-07-09
+21,1,Arta,Vushtrri,101,Laptop,Electronics,1,700,700.00,completed,online,2026-07-10
+22,11,Albion,Unknown,109,Webcam,Electronics,2,90,180.00,completed,online,2026-07-11
+23,12,Duplicate Customer,Prishtina,110,Notebook,Unknown,1,5,5.00,cancelled,store,2026-07-11
+26,5,Nora,Vushtrri,105,Headphones,Accessories,3,50,150.00,completed,store,2026-07-13
+27,6,Leart,Peja,108,Desk,Office,1,220,220.00,completed,online,2026-07-14
+28,7,Faton,Prizren,106,Desk Chair,Office,2,120,240.00,completed,store,2026-07-14
+29,8,Rina,Vushtrri,101,Laptop,Electronics,1,700,700.00,cancelled,online,2026-07-15
+30,10,Gresa,Prishtina,102,Mouse,Accessories,5,15,75.00,completed,online,2026-07-15

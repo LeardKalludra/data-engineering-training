@@ -1,0 +1,10 @@
+Pipeline Log Day 10
+Step 1: Loaded Bronze files.
+Step 2: Cleaned customers.
+Step 3: Cleaned products.
+Step 4: Validated orders.
+Step 5: Created Silver clean orders.
+Step 6: Created invalid orders file.
+Step 7: Created Gold revenue reports.
+Step 8: Created executive summary.
+Pipeline completed successfully.
