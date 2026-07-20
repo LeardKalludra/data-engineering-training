@@ -1,0 +1,40 @@
+======================================================================
+DAILY PRACTICE REPORT - DAY 11
+Program: Unity Tech Hub x Agilyti - Data Engineering / Databricks Training
+Focus:   Python + SQL Pipeline Preparation
+======================================================================
+
+1. SUMMARY OF COMPLETED WORK
+----------------------------------------------------------------------
+- Analyzed 3 Bronze raw CSV datasets (orders, customers, products) to identify data quality issues.
+- Built an automated Python ETL pipeline (`pipeline.py`) using standard libraries to clean, validate, and enrich the data.
+- Implemented validation logic to isolate bad records into `invalid_orders.csv` with clear error reasons.
+- Generated Silver clean orders (`orders_clean.csv`) and created Gold aggregated CSV reports and an executive text summary.
+- Prepared SQL setup and analytical scripts (`setup_clean_data.sql`, `sql_reports.sql`) including bonus segment analysis queries.
+- Authored notebook-style documentation in `README.md` and `pipeline_explanation.md`.
+
+2. KEY PIPELINE METRICS
+----------------------------------------------------------------------
+- Total Raw Bronze Orders Received: 24
+- Total Valid Silver Orders Cleaned: 14
+- Total Invalid Flagged Orders: 10
+- Total Completed Revenue Generated: €2,621.00
+- Top Performing City by Revenue: Vushtrri (€1,655.00)
+- Top Product Category by Revenue: Electronics (€2,280.00)
+
+3. KEY LEARNINGS & CONCEPTS MASTERED
+----------------------------------------------------------------------
+- Medallion Architecture Thinking: Understood how data evolves from raw messy inputs (Bronze) to clean enriched data (Silver) and aggregated metrics (Gold).
+- Python for ETL: Built custom normalization rules, set up lookup dictionaries for joins, and separated valid from invalid records.
+- Business Rule Logic: Enforced strict reporting logic where pending and cancelled orders are excluded from completed revenue totals.
+- SQL Aggregations & Segment Analysis: Used SQL queries (`GROUP BY`, `SUM`, `COUNT`, `AVG`) on Silver data to verify Python reporting results and run bonus segment analysis.
+
+4. VERIFICATION CHECKLIST
+----------------------------------------------------------------------
+[X] Project folder structure matches repository requirements.
+[X] `pipeline.py` executes cleanly from terminal without errors.
+[X] Invalid orders are captured with explicit failure reasons.
+[X] SQL queries run smoothly and produce exact matching totals.
+[X] Bonus segment analysis query added to `sql_reports.sql`.
+[X] Project is fully documented and ready for live defense.
+======================================================================

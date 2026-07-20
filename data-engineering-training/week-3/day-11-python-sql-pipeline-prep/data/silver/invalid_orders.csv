@@ -1,0 +1,10 @@
+order_id,customer_id,product_id,quantity,status,order_date,channel,invalid_reason
+3,C003,P003,,completed,2026-07-02,online,Missing quantity
+6,C005,P005,-1,completed,2026-07-03,store,Quantity must be positive
+7,C006,P006,abc,pending,2026-07-04,web,Quantity is not an integer
+8,C007,P002,2,,2026-07-04,online,Missing status
+9,C008,P007,1,completed,,store,Missing order_date
+14,C002,P003,2,returned,2026-07-07,online,Invalid status: returned
+16,C013,P002,2,completed,2026-07-08,online,Unknown customer_id: C013
+17,C003,P999,1,completed,2026-07-08,online,Unknown product_id: P999
+22,C009,P009,0,completed,2026-07-11,online,Quantity must be positive
