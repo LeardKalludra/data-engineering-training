@@ -1,0 +1,19 @@
+===============================================================================
+DAY 12 DAILY REPORT - DATA ENGINEERING TRAINING
+===============================================================================
+Student Name: Trainee
+Date: July 21, 2026
+Location: Kosovo
+Focus: Table Relationships, FK Constraints, and Multi-table JOINs
+
+SUMMARY OF COMPLETED WORK:
+1. Created complete relational schema using SQLite (4 tables: customers, products, orders, order_items).
+2. Implemented strict constraints (PRIMARY KEY AUTOINCREMENT, FOREIGN KEY, NOT NULL, CHECK).
+3. Populated schema with valid test records respecting all business logic rules.
+4. Executed failure testing in relationship_tests.sql to confirm constraint enforcement.
+5. Developed 22 analytical queries in join_reports.sql covering basic SELECTs, multi-table INNER JOINs, revenue aggregations, and LEFT JOINs.
+6. Documented entity relationships, constraint errors, and schema decisions across Markdown files.
+
+KEY TAKEAWAY:
+Data quality must be protected at the database schema level using referential integrity rather than relying on application code to keep data clean.
+===============================================================================
