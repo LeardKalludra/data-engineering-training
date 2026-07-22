@@ -1,0 +1,15 @@
+Unity Tech Hub x Agilyti - Data Engineering Training
+Day 13 Intensive Practice Daily Report
+Date: July 22, 2026
+Student: Leard Kalludra
+
+Summary of Work Completed:
+1. Designed complete entity-relationship model and created database_design.md documentation.
+2. Authored schema.sql creating 7 normalized tables with PK, FK, AUTOINCREMENT, NOT NULL, UNIQUE, and CHECK rules.
+3. Seeded realistic relational datasets in seed_data.sql across all tables including edge-case rows for join testing.
+4. Documented and executed constraint tests in constraint_tests.sql, validating that foreign key violations and invalid inserts are properly rejected by SQLite.
+5. Developed join_reports.sql featuring 14 distinct queries ranging from basic INNER JOINs to multi-table aggregations and outer join checks.
+6. Engineered manager_report.sql to solve direct business operational questions and constructed a master aggregated summary query.
+7. Prepared theoretical explanations in answers.md and finalized README.md documentation.
+
+Status: All tasks completed cleanly and fully tested. Ready for live live explanation.
